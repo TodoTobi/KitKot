@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitKot — Red social de videos cortos</title>
+    <meta name="description" content="KitKot es una red social donde los usuarios suben, ven y comparten videos cortos creativos. Descubrí talento local y compartí tus momentos.">
+    <meta name="keywords" content="videos cortos, red social, clips, tiktok, compartir videos, creativos">
+    <meta name="author" content="Tobias Vera">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo" onclick="showSection('inicio')">
+            Kit<span>Kot</span>
+        </div>
+        
+        <div class="search-bar">
+            <input type="search" placeholder="Buscar" id="searchInput" onkeyup="handleSearch(event)">
+            <span class="search-icon" onclick="buscar()">🔍</span>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn-upload" onclick="showModal('upload')">+ Subir</button>
+            <div class="icon-btn" onclick="showModal('notifications')">🔔</div>
+            <div class="icon-btn" onclick="showModal('messages')">💬</div>
+            <button class="btn-login" onclick="showModal('login')">Iniciar sesión</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside id="sidebar">
+            <div class="sidebar-item active" data-section="inicio">
+                <span class="sidebar-icon">🏠</span>
+                <span class="sidebar-text">Inicio</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="explorar">
+                <span class="sidebar-icon">🔍</span>
+                <span class="sidebar-text">Explorar</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="siguiendo">
+                <span class="sidebar-icon">👥</span>
+                <span class="sidebar-text">Siguiendo</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="para-ti">
+                <span class="sidebar-icon">✨</span>
+                <span class="sidebar-text">Para ti</span>
+            </div>
+            
+            <div class="sidebar-item" data-modal="messages">
+                <span class="sidebar-icon">💬</span>
+                <span class="sidebar-text">Mensajes Directos</span>
+            </div>
+            
+            <div class="sidebar-item" data-modal="notifications">
+                <span class="sidebar-icon">🔔</span>
+                <span class="sidebar-text">Notificaciones</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="perfil">
+                <span class="sidebar-icon">👤</span>
+                <span class="sidebar-text">Mi Perfil</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="me-gusta">
+                <span class="sidebar-icon">❤️</span>
+                <span class="sidebar-text">Videos con Me Gusta</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="publicados">
+                <span class="sidebar-icon">📹</span>
+                <span class="sidebar-text">Videos Publicados</span>
+            </div>
+            
+            <div class="sidebar-item" data-section="configuracion">
+                <span class="sidebar-icon">⚙️</span>
+                <span class="sidebar-text">Configuración</span>
+            </div>
+        </aside>
+
+        <main id="mainContent"></main>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+
+    <script src="app.js"></script>
